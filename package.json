@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ahojukka5/wellness/issues"
   },
-  "homepage": "https://github.com/ahojukka5/wellness#readme"
+  "homepage": "https://github.com/ahojukka5/wellness#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
