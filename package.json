@@ -1,0 +1,22 @@
+{
+  "name": "wellness",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ahojukka5/wellness.git"
+  },
+  "keywords": [
+    "wellness"
+  ],
+  "author": "Jukka Aho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahojukka5/wellness/issues"
+  },
+  "homepage": "https://github.com/ahojukka5/wellness#readme"
+}
