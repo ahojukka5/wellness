@@ -2,7 +2,6 @@ import express from 'express';
 import { calculateBmi } from './bmiCalculator';
 
 const app = express();
-module.exports = app;
 
 app.get('/hello', (_req, res) => {
   res.send('Hello Full Stack!');
@@ -18,3 +17,5 @@ app.get('/bmi', (req, res) => {
     res.json({ height, weight, bmi });
   }
 });
+
+export default app;
