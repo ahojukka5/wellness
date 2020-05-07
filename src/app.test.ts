@@ -1,5 +1,5 @@
-const app = require('./app');
-const request = require('supertest');
+import app from './app';
+import request from 'supertest';
 
 describe('hello endpoint', () => {
   test('should return string from hello endpoint', async () => {
