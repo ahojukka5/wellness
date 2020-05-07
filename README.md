@@ -2,6 +2,7 @@
 
 [![Build Status][travis-img]][travis-url]
 [![Coverage Status][coveralls-img]][coveralls-url]
+![Node.js CI](https://github.com/ahojukka5/wellness/workflows/Node.js%20CI/badge.svg)
 
 Package author: Jukka Aho (@ahojukka5, ahojukka5@gmail.com)
 
