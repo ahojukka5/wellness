@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/ahojukka5/wellness#readme",
   "devDependencies": {
+    "@types/express": "^4.17.6",
     "coveralls": "^3.1.0",
     "jest": "^26.0.1",
     "ts-jest": "^25.5.0",
