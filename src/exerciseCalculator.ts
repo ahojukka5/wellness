@@ -69,3 +69,5 @@ if (require.main === module) {
     console.log('Error:', e.message);
   }
 }
+
+export { calculateExercises };
