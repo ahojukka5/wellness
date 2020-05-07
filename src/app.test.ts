@@ -30,5 +30,24 @@ describe('bmi endpoint', () => {
     expect(response.body).toEqual(expected);
   });
 });
+
+describe('exercises endpoint', () => {
+  test('should return object given POST with proper parameters', async () => {
+    const params = {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      daily_exercises: [1, 0, 2, 0, 3, 0, 2.5],
+      target: 2.5,
+    };
+    const expected = {
+      periodLength: 7,
+      trainingDays: 4,
+      success: false,
+      rating: 1,
+      ratingDescription: 'bad',
+      target: 2.5,
+      average: 1.2142857142857142,
+    };
+    const response = await request(app).post('/exercises').query(params);
+    expect(response.body).toEqual(expected);
   });
 });
