@@ -1,9 +1,9 @@
-interface getRatingResults {
+interface Rating {
   rating: number;
   ratingDescription: string;
 }
 
-const getRating = (average: number, target: number): getRatingResults => {
+const getRating = (average: number, target: number): Rating => {
   if (average == 0.0) {
     return { rating: 1, ratingDescription: 'you need to start execising' };
   }
@@ -48,7 +48,7 @@ try {
   const target = Number(args[2]);
   if (isNaN(target)) throw new Error('Parameter target is not a number!');
   const hours = [];
-  for (let i: number = 3; i < args.length; i++) {
+  for (let i = 3; i < args.length; i++) {
     const val = Number(args[i]);
     if (isNaN(val)) throw new Error(`Argument ${i} is not a number!`);
     hours.push(val);
