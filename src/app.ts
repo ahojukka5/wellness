@@ -1,5 +1,5 @@
 import express from 'express';
-const { calculateBmi } = require('./bmiCalculator.ts');
+import { calculateBmi } from './bmiCalculator';
 
 const app = express();
 module.exports = app;

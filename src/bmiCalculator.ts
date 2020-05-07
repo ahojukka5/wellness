@@ -50,9 +50,6 @@ const bmiCalculatorCLI = (args: string[]) => {
   console.log(calculateBmi(height, mass));
 };
 
-module.exports.calculateBmi = calculateBmi;
-module.exports.bmiCalculatorCLI = bmiCalculatorCLI;
-
 if (require.main === module) {
   try {
     bmiCalculatorCLI(process.argv);
@@ -60,3 +57,5 @@ if (require.main === module) {
     console.log('Error:', e.message);
   }
 }
+
+export { calculateBmi, bmiCalculatorCLI };
