@@ -42,4 +42,18 @@ const calculateExercises = (hours: number[], target: number): Result => {
   };
 };
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
+try {
+  const args = process.argv;
+  if (args.length < 4) throw new Error('Not enough arguments');
+  const target = Number(args[2]);
+  if (isNaN(target)) throw new Error('Parameter target is not a number!');
+  const hours = [];
+  for (let i: number = 3; i < args.length; i++) {
+    const val = Number(args[i]);
+    if (isNaN(val)) throw new Error(`Argument ${i} is not a number!`);
+    hours.push(val);
+  }
+  console.log(calculateExercises(hours, target));
+} catch (e) {
+  console.log('Error:', e.message);
+}
