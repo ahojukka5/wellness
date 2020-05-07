@@ -6,6 +6,7 @@
   "scripts": {
     "calculateBmi": "ts-node src/bmiCalculator.ts",
     "calculateExercises": "ts-node src/exerciseCalculator.ts",
+    "start": "ts-node src/index.ts",
     "test": "jest --verbose",
     "test:coverage": "jest --verbose --coverage --coverageReporters=text-lcov | coveralls"
   },
