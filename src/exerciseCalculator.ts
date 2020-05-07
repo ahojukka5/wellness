@@ -49,8 +49,7 @@ const calculateExercises = (hours: number[], target: number): Result => {
   };
 };
 
-try {
-  const args = process.argv;
+const exerciseCalculatorCLI = (args: string[]) => {
   if (args.length < 4) throw new Error('Not enough arguments');
   const target = Number(args[2]);
   if (isNaN(target)) throw new Error('Parameter target is not a number!');
@@ -61,6 +60,12 @@ try {
     hours.push(val);
   }
   console.log(calculateExercises(hours, target));
-} catch (e) {
-  console.log('Error:', e.message);
+};
+
+if (require.main === module) {
+  try {
+    exerciseCalculatorCLI(process.argv);
+  } catch (e) {
+    console.log('Error:', e.message);
+  }
 }
