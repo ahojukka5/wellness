@@ -8,9 +8,9 @@
     "calculateExercises": "ts-node src/exerciseCalculator.ts",
     "dev": "ts-node-dev src/index.ts",
     "start": "ts-node src/index.ts",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test": "jest --verbose",
+    "test:coverage": "jest --verbose --coverage",
+    "test:coveralls": "jest --verbose --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
