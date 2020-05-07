@@ -4,13 +4,20 @@ interface Rating {
 }
 
 const getRating = (average: number, target: number): Rating => {
-  if (average == 0.0) {
-    return { rating: 1, ratingDescription: 'you need to start execising' };
+  const percentDone = average / target;
+  if (percentDone == 0.0) {
+    return { rating: 0, ratingDescription: 'you need to start execising' };
   }
-  if (average < target) {
+  if (percentDone < 0.5) {
+    return { rating: 1, ratingDescription: 'bad' };
+  }
+  if (percentDone < 1.0) {
     return { rating: 2, ratingDescription: 'not too bad but could be better' };
   }
-  return { rating: 3, ratingDescription: 'good work, keep on going' };
+  if (percentDone < 1.5) {
+    return { rating: 3, ratingDescription: 'good work, keep on going' };
+  }
+  return { rating: 4, ratingDescription: 'excellent work' };
 };
 
 interface Result {
