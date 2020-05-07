@@ -25,6 +25,9 @@ jobs:
     - name: Run build
       run: npm run build --if-present
 
+    - name: Test linter
+      run: npm run lint
+
     - name: Test package
       run: npm run test:coverage
 
