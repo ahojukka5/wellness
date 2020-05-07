@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "calculateBmi": "ts-node src/bmiCalculator.ts",
+    "calculateExercises": "ts-node src/exerciseCalculator.ts",
     "test": "jest --verbose --passWithNoTests"
   },
   "repository": {
