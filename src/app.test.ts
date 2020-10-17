@@ -5,6 +5,7 @@ describe('hello endpoint', () => {
   test('should return string from hello endpoint', async () => {
     const response = await request(app).get('/hello');
     const expected = 'Hello Full Stack!';
+    expect(response.status).toEqual(200);
     expect(response.text).toEqual(expected);
   });
 });
@@ -18,16 +19,22 @@ describe('bmi endpoint', () => {
       weight: 72,
       bmi: 'Normal (healthy weight)',
     };
+    expect(response.status).toEqual(200);
     expect(response.body).toEqual(expected);
   });
 
-  test('should return errors if parameters are malformatted', async () => {
+  test('should return error if parameters are missing', async () => {
+    const params = {};
+    const response = await request(app).get('/bmi').query(params);
+    expect(response.status).toEqual(400);
+    expect(response.body).toEqual({ error: 'missing parameters' });
+  });
+
+  test('should return error if parameters are malformatted', async () => {
     const params = { height: 180, weight: 'I do not want to tell' };
     const response = await request(app).get('/bmi').query(params);
-    const expected = {
-      error: 'malformatted parameters',
-    };
-    expect(response.body).toEqual(expected);
+    expect(response.status).toEqual(400);
+    expect(response.body).toEqual({ error: 'malformatted parameters' });
   });
 });
 
@@ -48,6 +55,21 @@ describe('exercises endpoint', () => {
       average: 1.2142857142857142,
     };
     const response = await request(app).post('/exercises').query(params);
+    expect(response.status).toEqual(200);
     expect(response.body).toEqual(expected);
+  });
+
+  test('should return error if parameters are missing', async () => {
+    const response = await request(app).post('/exercises').query({});
+    expect(response.status).toEqual(400);
+    expect(response.body).toEqual({ error: 'missing parameters' });
+  });
+
+  test('should return error if parameters are malformatted', async () => {
+    // eslint-disable-next-line @typescript-eslint/camelcase
+    const params = { daily_exercises: 3, target: 'no have' };
+    const response = await request(app).post('/exercises').query(params);
+    expect(response.status).toEqual(400);
+    expect(response.body).toEqual({ error: 'malformatted parameters' });
   });
 });
