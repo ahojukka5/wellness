@@ -50,6 +50,7 @@ const bmiCalculatorCLI = (args: string[]) => {
   console.log(calculateBmi(height, mass));
 };
 
+/* istanbul ignore next */
 if (require.main === module) {
   try {
     bmiCalculatorCLI(process.argv);
