@@ -62,6 +62,7 @@ const exerciseCalculatorCLI = (args: string[]) => {
   console.log(calculateExercises(hours, target));
 };
 
+/* istanbul ignore next */
 if (require.main === module) {
   try {
     exerciseCalculatorCLI(process.argv);
@@ -70,4 +71,4 @@ if (require.main === module) {
   }
 }
 
-export { calculateExercises };
+export { getRating, calculateExercises, exerciseCalculatorCLI };
